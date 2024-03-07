@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasabinet</title>
+</head>
+
+<body class="bg-gray-200">
+    <!-- Carousel -->
+    <div class="relative">
+        <div class="carousel">
+            <img class="object-cover w-full h-64" src="path_to_your_image_1.jpg" alt="Image 1">
+            <img class="object-cover w-full h-64" src="path_to_your_image_2.jpg" alt="Image 2">
+            <!-- Add more images as needed -->
+        </div>
+        <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+            <h1 class="text-4xl text-white">Your Title Here</h1>
+        </div>
+    </div>
+
+    <!-- Bento Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
+        <div class="card bg-white p-4 rounded shadow">
+            <!-- Card Content Here -->
+        </div>
+        <!-- Add more cards as needed -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-500 text-white text-center p-4">
+        <p>Fun Little Footer</p>
+        </div>
+</body>
+<script>
+    let carouselImages = Array.from(document.querySelector('.carousel').children);
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        carouselImages.forEach((img, index) => {
+            img.style.display = index === currentIndex ? 'block' : 'none';
+        });
+
+        currentIndex = (currentIndex + 1) % carouselImages.length;
+    }
+
+    setInterval(updateCarousel, 2000); // Change image every 2 seconds
+    updateCarousel(); // Initial update
+</script>
+</html>
